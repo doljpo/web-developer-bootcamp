@@ -19,6 +19,12 @@ body {
 
 .content {
     margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.navbar.scrolled {
+    background: #dec0de;
+    transition: background 500ms;
 }
 
 #mainNavbar {
@@ -50,14 +56,7 @@ body {
 @media (max-width: 1000px) {
     #headingGroup h1 {
         font-weight: 100;
-        font-size: 2.2rem;
-    }
-}
-
-/* @media (max-width: 1000px) {
-    #headingGroup h1 {
-        font-weight: 100;
-        font-size: 2.9rem;
+        font-size: 2.7rem;
     }
 }
 
@@ -71,7 +70,7 @@ body {
 @media (max-width: 850px) {
     #headingGroup h1 {
         font-weight: 100;
-        font-size: 2.4rem;
+        font-size: 2.3rem;
     }
 }
 
@@ -80,4 +79,4 @@ body {
         font-weight: 100;
         font-size: 2.2rem;
     }
-} */
+}
