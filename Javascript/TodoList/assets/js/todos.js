@@ -2,10 +2,12 @@ $("ul").on("click", "li", function() {
     $(this).toggleClass('complete');
 });
 
-$("ul").on("click", "li span", function() {    
-    $(this).parent().fadeOut(1000, function() {
+$("ul").on("click", "li span", function(event) {    
+    $(this).parent().fadeOut(500, function() {
         $(this).remove();
     });
+
+    event.stopPropagation();
 });
 
 $("input[type=text]").on('keypress', function(key) {
