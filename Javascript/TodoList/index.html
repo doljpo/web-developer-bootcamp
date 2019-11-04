@@ -1,21 +1,25 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" type="text/css" href="assets/css/lib/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="assets/css/todos.css">
     <title>Todo List</title>
 </head>
 <body>
-    <div class="container">
-        <h1>To-do List</h1>
-        <input type="text" placeholder="Insert new todo item...">
+    <div id="container">
+        <h1>To-do List <i class="fa fa-plus"></i></h1>
+        <input type="text" placeholder="Add New Todo">
         <ul>
-            <li><span>X</span> Item example 1</li>
-            <li><span>X</span> Item example 2</li>
-            <li><span>X</span> Item example 3</li>
+            <li><span><i class="fa fa-trash-alt"></i></span> Item example 1</li>
+            <li><span><i class="fa fa-trash-alt"></i></span> Item example 2</li>
+            <li><span><i class="fa fa-trash-alt"></i></span> Item example 3</li>
         </ul>
     </div>
+    <script type="text/javascript" src="assets/js/lib/fontawesome/js/all.min.js"></script>
     <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="assets/js/todos.js"></script>
 </body>
