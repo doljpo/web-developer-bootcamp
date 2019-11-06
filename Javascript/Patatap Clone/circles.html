@@ -6,8 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Circles</title>
     <link rel="stylesheet" href="assets/css/circles.css">
+    <script type="text/javascript" src="assets/js/lib/paper-full.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+
+        var circles = [];
+
+        function onKeyDown(event) {
+            var maxPoint = new Point(view.size.width, view.size.height);
+            var randomPoint = Point.random();
+            var point = maxPoint * randomPoint;
+          
+            circles.push(drawCircle(point));
+        }
+
+        function drawCircle(point) {
+            var path = new Path.Circle(point, 200);
+            path.fillColor = randomColor();
+            
+            return path;
+        }
+
+        function randomColor() {
+            return "rgb(" + randomTo255() + ", " + randomTo255() + " ," + randomTo255() + ")";
+        }
+
+        function randomTo255() {
+            return Math.floor(Math.random() * 255);
+        }
+
+        function onFrame(event) {
+            for (var index = 0; index < circles.length; index++) {                
+                circles[index].fillColor.hue += 1;                
+                circles[index].scale(.9);
+            }            
+        }
+
+    </script>
 </head>
 <body>
-    
+    <canvas id="myCanvas" resize></canvas>
 </body>
 </html>
