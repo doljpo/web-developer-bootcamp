@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta cha       rset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Circles</title>
     <link rel="stylesheet" href="assets/css/circles.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.js"></script>
     <script type="text/javascript" src="assets/js/lib/paper-full.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
-
-var keyData = {
+        var keyData = {
 			q: {
 				sound: new Howl({ src: ['assets/sounds/bubbles.mp3'] }),
 				color: '#1abc9c'
@@ -115,7 +114,8 @@ var keyData = {
 				sound: new Howl({ src: ['assets/sounds/moon.mp3'] }),
 				color: '#2c3e50'
 			}
-		}
+        }
+        
         var circles = [];
 
         function onKeyDown(event) {            
@@ -136,21 +136,17 @@ var keyData = {
             return path;
         }
 
-        function randomColor() {
-            return "rgb(" + randomTo255() + ", " + randomTo255() + " ," + randomTo255() + ")";
-        }
-
-        function randomTo255() {
-            return Math.floor(Math.random() * 255);
-        }
-
         function onFrame(event) {
             for (var index = 0; index < circles.length; index++) {                
                 circles[index].fillColor.hue += 1;                
                 circles[index].scale(.9);
+
+                if (circles[index].area < 1) {
+                    circles[index].remove();
+                    circles.splice(index, 1);                    
+                }                
             }            
         }
-
     </script>
 </head>
 <body>
