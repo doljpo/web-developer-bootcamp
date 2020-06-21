@@ -1,4 +1,3 @@
 # web-developer-bootcamp
-Repository with some projects from course https://www.udemy.com/course/the-web-developer-bootcamp
 
-This repository is for practice purposes.
+Some of the projects from Colt Steele [course at Udemy](https://www.udemy.com/course/the-web-developer-bootcamp)
